@@ -1,16 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>실습 목록</h2>
-    <h3>CSS</h3>
-    <ul>
-        <li>Flex 기초<iframe src="./css/flex-layout.html">레이아웃</iframe></li>
-        <li>Grid 기초<iframe src="./css/grid-basic.html">레이아웃</iframe></li>
-    </ul>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습 목록</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f5f5f5;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #2c3e50;
+      }
+
+      h2 {
+        margin: 2rem 0 1rem 0;
+        color: #34495e;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 0.5rem;
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+        gap: 20px;
+        justify-content: start;
+        margin-bottom: 2rem;
+      }
+
+      .card {
+        border: 1px solid #bbb;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        max-width: 320px;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-header {
+        padding: 1rem;
+        background: #f8f9fa;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .card-title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0;
+        color: #1d1d1f;
+      }
+
+      .card-preview {
+        height: 200px;
+        border: none;
+        width: 100%;
+        display: block;
+        background: #f8f9fa;
+        pointer-events: none;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 10px;
+        }
+
+        .cards-grid {
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          gap: 15px;
+        }
+
+        body {
+          padding: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .cards-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .card {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>실습 목록</h1>
+
+      <section>
+        <h2>CSS</h2>
+        <div class="cards-grid">
+          <a href="./css/flex-layout.html" class="card">
+            <div class="card-header">
+              <h3 class="card-title">Flex 기초 레이아웃</h3>
+            </div>
+            <iframe
+              class="card-preview"
+              src="./css/flex-layout.html"
+              title="Flex 기초 레이아웃 미리보기"
+            ></iframe>
+          </a>
+
+          <a href="./css/grid-basic.html" class="card">
+            <div class="card-header">
+              <h3 class="card-title">Grid 기초 레이아웃</h3>
+            </div>
+            <iframe
+              class="card-preview"
+              src="./css/grid-basic.html"
+              title="Grid 기초 레이아웃 미리보기"
+            ></iframe>
+          </a>
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
