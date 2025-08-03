@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      [class*="container"] {
+        margin: 20px 0;
+      }
+      .item {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container1 .item {
+        background-color: pink;
+      }
+      .container2 .item {
+        background-color: greenyellow;
+      }
+
+      .container1 {
+        display: grid;
+
+        /* 4개씩 배치 */
+        grid-template-columns: repeat(auto-fit, 100px);
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .container2 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: minmax(50px, 1fr) minmax(50px, 2fr) minmax(
+            50px,
+            3fr
+          );
+        gap: 20px;
+        .item {
+          width: auto;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. 100px씩 자동으로 열 개수 계산 -->
+    <div class="container1">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">10</div>
+      <div class="item">11</div>
+      <div class="item">12</div>
+    </div>
+
+    <!-- 2. 3열, 각 행은 1:2:3의 크기를 가지며, 행의 최소 크기는 50px -->
+    <div class="container2">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+    </div>
+  </body>
+</html>
