@@ -1,0 +1,12 @@
+# 이미지 폴더
+이 폴더에는 3D Carousel에서 사용할 이미지들이 들어있습니다.
+
+현재 필요한 이미지들:
+- weniv-binky.png
+- weniv-chilli.png
+- weniv-garry.png
+- weniv-licat.png
+- weniv-suri.png
+- weniv-wade.png
+
+실제 프로젝트에서는 이 이미지들을 적절한 PNG 파일로 교체하세요.
